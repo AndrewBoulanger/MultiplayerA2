@@ -1,0 +1,57 @@
+part 1:
+
+1
+An IP address is a unique numerical ID for each device connected on a network. It's used to identify different hosts/connections 
+and also acts as an address to send and receive information, so it's necessary to connect to the internet and communicate.
+
+2
+A global IP address is used for communicating on the internet, a local IP is used for devices on a local network to connect 
+and communicate with each other. A router is a local network with a global IP, so it has several local IPs to let the other 
+devices connect to it and then it uses the shared Global IP to connect those devices to the internet (with the router as an intermediary).
+
+3
+Global: 142.117.73.13    Local: 192.168.2.17
+
+4
+Static IPs Do not change, dynamic IPs do change over time. Static IPs are often used for servers and other connections that might benefit 
+from having a consistent, easier-to-find address, but they're more costly than Dynamic. Dynamic IP's are more common for personal use and
+since they change they can be harder to track.
+
+5
+Port forwarding is the directing of external data within a local network. Ports act as IDs for each app or service running on a device,
+similar to how an IP acts as an ID for a device. Port forwarding tells the local network what local IP address and port to send global 
+data to, mapping a global port to the local IP/port (aka socket).
+
+6
+A socket is the combination of an IP address and a port, so its the ID for both a device and the service running on a network. 
+
+7
+Ports are a range of well-known(0-1023), registered(1024 - 49151) or client program (49152-65535) numbers which each network 
+device has. Sockets also include an IP address so you can determine the port of the specific device. 
+(Are these basically what we've been doing with signifiers to a very large extent?)
+
+8
+Well 0 to 1023 have specific purposes, so they shouldn't be used. Some ports between 1024 and 49151 have registered uses, but those seem 
+to be most concentrated below 5000. So you'd probably want to use something over 5000.
+
+9
+The OSI model describes the different layers used to communicate over a network. It has 7 layers: application, presentation, session, 
+transport, network, data link and physical. They differentiate between the different ways data is transmitted and interacted with.
+
+10
+As game developers we'll probably be mostly concerned with the application layer and how data is conveyed to a player and received from them. 
+
+11
+TCP is a protocol for establishing and maintaining connections which transmit data. It determines how to break up data into packets and how 
+to deliver them to a peer in order to ensure a reliable transmission between the server and client.
+
+12
+UDP is a communications protocol used for time sensitive transmissions. It doesn't require an established connection before it sends the data, 
+which is faster, but may lose data.
+
+13
+TCP is best used when there can be an acceptable delay between sending and receiving data, like when sending emails or turn based games.
+
+14
+UDP is best used when there can't be a delay or the server and client are simultaneously sending data back and forth and both need to be up to 
+date. This includes video calls and live multiplayer games.

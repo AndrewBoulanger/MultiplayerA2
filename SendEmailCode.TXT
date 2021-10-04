@@ -1,0 +1,35 @@
+using System;
+using System.Net;
+using System.Net.Mail;
+
+
+namespace Email
+{
+    public class EmailSender
+    {
+
+        public static void Main(string[] args)
+        {
+
+            SmtpClient client = new SmtpClient("smtp.gmail.com")
+            {
+                Port = 587, Credentials = new NetworkCredential("andrewboulanger14@gmail.com","*****"), EnableSsl = true,
+            };
+
+            MailMessage newEmail = new MailMessage("andrewboulanger14@gmail.com", "Fernando.Restituto@georgebrown.ca");
+
+            newEmail.Subject = "NetworkingTopics";
+            newEmail.Body = "Hello Fernando, \n\n " +
+                "Attached is a text file showing the code I used to send this email, as well as a photo of my port forwarding settings and another text document with my answers for part 1\n\n"
+                + "regards\n Andrew Boulanger 101292574 ";
+
+
+            newEmail.Attachments.Add(new Attachment("C:/attachments/SendEmailCode.txt"));
+            newEmail.Attachments.Add(new Attachment("C:/attachments/portForwarding.png"));
+            newEmail.Attachments.Add(new Attachment("C:/attachments/Part1Answers.txt"));
+
+     
+            client.Send(newEmail);
+        }
+    }
+}
